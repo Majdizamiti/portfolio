@@ -1,0 +1,36 @@
+<div class="cert-card" [ngClass]="themeClass">
+  <img [src]="icon" class="watermark-bg" alt="watermark logo">
+  
+  <div class="card-content">
+    <div class="top-bar">
+      <span class="issuer">{{ issuer }}</span>
+      <span class="date">{{ date }}</span>
+    </div>
+
+    <div class="main-body">
+      <div class="icon-wrapper">
+        <img [src]="icon" class="card-logo" alt="cert logo">
+      </div>
+      <div class="text-group">
+        <h3 class="cert-title">{{ title }}</h3>
+        <p class="cert-full-title">{{ fullTitle }}</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="bottom-bar">
+      <div class="credential-group">
+        <span class="credential-label">ID / Credential</span>
+        <span class="credential-val">{{ credentialId }}</span>
+      </div>
+      <a href="#" class="verify-link" (click)="$event.preventDefault()">
+        Verify
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<nav [class.scrolled]="scrolled">
+  <div class="nav-container">
+    <a class="logo" (click)="scrollTo($event, 'home')" href="#home">
+      <span class="logo-symbol">&lt;</span>MZ<span class="logo-symbol">/&gt;</span>
+    </a>
+
+    <button class="hamburger" [class.active]="menuOpen" (click)="toggleMenu()" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul [class.open]="menuOpen">
+      <li><a href="#home" (click)="scrollTo($event, 'home')">Home</a></li>
+      <li><a href="#about" (click)="scrollTo($event, 'about')">About</a></li>
+      <li><a href="#experience" (click)="scrollTo($event, 'experience')">Experience</a></li>
+      <li><a href="#projects" (click)="scrollTo($event, 'projects')">Projects</a></li>
+      <li><a href="#certifications" (click)="scrollTo($event, 'certifications')">Certifications</a></li>
+      <li><a href="#cv" (click)="scrollTo($event, 'cv')" class="nav-cta">Download CV</a></li>
+    </ul>
+  </div>
+</nav>

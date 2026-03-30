@@ -1,0 +1,31 @@
+<section id="certifications" class="certifications-section">
+
+  <h2 @fadeInUp>Certifications</h2>
+
+  <div class="cards">
+
+    <div class="card"
+         *ngFor="let cert of certifications"
+         @fadeInUp>
+
+      <div class="card-inner">
+
+        <div class="logo">
+          <img [src]="cert.logo" alt="Certification Logo">
+        </div>
+
+        <h3>{{ cert.short }}</h3>
+
+        <p class="title">{{ cert.title }}</p>
+
+        <p class="issuer">{{ cert.issuer }}</p>
+
+        <span class="date">{{ cert.date }}</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

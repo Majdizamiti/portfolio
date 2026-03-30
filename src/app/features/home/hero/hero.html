@@ -1,0 +1,87 @@
+<section id="home" class="hero">
+
+  <!-- Background Effects -->
+  <div class="hero-bg">
+    <div class="grid-pattern"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <div class="hero-container">
+
+    <!-- LEFT CONTENT -->
+    <div class="hero-text">
+
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Available for opportunities
+      </div>
+
+      <h1>
+        Hi, I'm <span class="highlight">Majdi Zamiti</span>
+      </h1>
+
+      <h2 class="typing">
+        <span class="typing-prefix">&gt; </span>{{ displayedRole }}<span class="cursor">|</span>
+      </h2>
+
+      <p>
+        I build scalable, automated and secure infrastructure.
+        Passionate about Linux, Ansible and modern DevOps practices.
+      </p>
+
+      <div class="tech-pills">
+        <span class="pill">Linux</span>
+        <span class="pill">Ansible</span>
+        <span class="pill">Docker</span>
+        <span class="pill">Kubernetes</span>
+        <span class="pill">CI/CD</span>
+      </div>
+
+      <div class="buttons">
+        <button class="primary-btn" (click)="scrollTo('experience')">
+          <span>View Experience</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+
+        <a href="assets/cv.pdf" download>
+          <button class="secondary-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Download CV
+          </button>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="hero-image">
+      <div class="image-ring"></div>
+      <div class="image-ring ring-2"></div>
+      <img src="majdi.png" alt="Majdi Zamiti Profile">
+      <div class="floating-badge badge-1">🐧 Linux</div>
+      <div class="floating-badge badge-2">⚙️ Ansible</div>
+      <div class="floating-badge badge-3">🐳 Docker</div>
+    </div>
+
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator">
+    <div class="mouse">
+      <div class="wheel"></div>
+    </div>
+    <span>Scroll down</span>
+  </div>
+
+</section>

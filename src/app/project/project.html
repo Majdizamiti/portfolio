@@ -1,0 +1,62 @@
+<section id="projects" class="section">
+  <div class="projects-container">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-subtitle">Real-world applications and infrastructures I have built and maintained.</p>
+
+    <div class="projects-grid">
+      
+      <div class="proj-card" *ngFor="let proj of projects" [ngClass]="getThemeClass(proj)">
+        <!-- Giant Watermark Background -->
+        <img [src]="proj.icon" class="watermark-bg" alt="watermark logo">
+        
+        <div class="card-content">
+          <!-- Top Bar -->
+          <div class="top-bar">
+            <span class="issuer">Project</span>
+            <span class="date" *ngIf="proj.liveLink">Deployed</span>
+            <span class="date" *ngIf="!proj.liveLink">In Progress</span>
+          </div>
+
+          <!-- Main Body -->
+          <div class="main-body">
+            <div class="icon-wrapper">
+              <img [src]="proj.icon" class="card-logo" alt="project logo">
+            </div>
+            <div class="text-group">
+              <h3 class="proj-title">{{ proj.title }}</h3>
+              <p class="proj-desc">{{ proj.description }}</p>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Bottom Bar -->
+          <div class="bottom-bar">
+            <div class="tech-group">
+              <span class="tech-label">Tech Stack</span>
+              <div class="tech-tags">
+                <span class="tech-tag" *ngFor="let tech of proj.techStack">{{ tech }}</span>
+              </div>
+            </div>
+            
+            <div class="actions">
+              <a *ngIf="proj.githubLink" [href]="proj.githubLink" class="verify-link" (click)="$event.preventDefault()">
+                GitHub
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+              <a *ngIf="proj.liveLink" [href]="proj.liveLink" class="verify-link" (click)="$event.preventDefault()">
+                Live Demo
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
