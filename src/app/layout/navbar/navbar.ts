@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ThemeService } from '../../core/theme.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,6 +12,16 @@ import { CommonModule } from '@angular/common';
 export class NavbarComponent {
   scrolled = false;
   menuOpen = false;
+
+  constructor(private themeService: ThemeService) {}
+
+  get isDark(): boolean {
+    return this.themeService.theme === 'dark';
+  }
+
+  toggleTheme(): void {
+    this.themeService.toggle();
+  }
 
   @HostListener('window:scroll')
   onScroll() {

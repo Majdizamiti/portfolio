@@ -12,7 +12,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border-accent), transparent);
+  background: linear-gradient(90deg, transparent, var(--border-fire), transparent);
 }
 
 .cv-container {
@@ -68,8 +68,8 @@
 .cv-icon svg {
   width: 64px;
   height: 64px;
-  stroke: var(--accent-cyan);
-  filter: drop-shadow(0 0 10px var(--accent-cyan-glow));
+  stroke: var(--accent-fire);
+  filter: drop-shadow(0 0 10px var(--accent-fire-glow));
   transition: var(--transition-smooth);
 }
 

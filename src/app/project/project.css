@@ -40,19 +40,19 @@
 }
 
 .theme-default {
-  --proj-primary: #ff0055;
-  --proj-glow: rgba(255, 0, 85, 0.15);
-  --proj-hover-glow: rgba(255, 0, 85, 0.3);
+  --proj-primary: #d92b28;
+  --proj-glow: rgba(217, 43, 40, 0.2);
+  --proj-hover-glow: rgba(217, 43, 40, 0.35);
 }
 
 /* Base Card (Mirrors cert-card) */
 .proj-card {
   position: relative;
-  background: var(--bg-card);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(15, 15, 20, 0.82);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
   padding: 2.5rem;
-  min-height: 250px;
+  min-height: 260px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -60,6 +60,19 @@
               box-shadow 0.4s ease, 
               border-color 0.4s ease;
   z-index: 1;
+}
+
+.proj-card::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -40px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, rgba(217, 43, 40, 0.18), transparent 60%);
+  filter: blur(16px);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .proj-card:hover {

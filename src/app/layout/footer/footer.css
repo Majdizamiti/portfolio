@@ -19,7 +19,7 @@
     transform: translateX(-50%);
     width: 70%;
     height: 1px;
-    background: radial-gradient(circle, var(--accent-cyan-glow) 0%, transparent 70%);
+    background: radial-gradient(circle, var(--accent-fire-glow) 0%, transparent 70%);
 }
 
 .footer-container {
@@ -53,9 +53,9 @@
 }
 
 .logo-symbol {
-    color: var(--accent-magenta);
+    color: var(--accent-fire);
     font-weight: 500;
-    text-shadow: 0 0 10px var(--accent-magenta-glow);
+    text-shadow: 0 0 12px var(--accent-fire-glow);
 }
 
 .footer-logo:hover {
@@ -125,7 +125,7 @@
     position: absolute;
     left: -15px;
     opacity: 0;
-    color: var(--accent-cyan);
+    color: var(--accent-fire);
     transition: var(--transition-fast);
     transform: translateX(-5px);
     font-family: var(--font-mono);

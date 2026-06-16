@@ -24,6 +24,7 @@ export class Project {
       description: 'A dynamic, high-performance single-page application built with React, focusing on delivering a seamless and interactive user experience.',
       techStack: ['React', 'TypeScript', 'Tailwind', 'Redux'],
       githubLink: '#',
+      liveLink: '#',
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg'
     },
     {
@@ -46,8 +47,24 @@ export class Project {
       description: 'A smart irrigation system (software , hardware) that control sensors and actors using mobile application.',
       techStack: ['Android Studio', 'JAVA', 'XML', 'NODEMCU ESP8266', 'FIREBASE'],
       githubLink: 'https://github.com/Majdizamiti/Smart_Irrigation_System',
+      liveLink: '#',
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg'
-    }
+    },
+    {
+      title: 'Islamic App',
+      description: 'A mobile application for accessing Islamic content and resources.',
+      techStack: ['Android Studio', 'JAVA', 'XML', 'FIREBASE'],
+      githubLink: 'https://github.com/Majdizamiti/islamic_app',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg'
+    },
+    {
+      title: 'Ecommerce Dashboard Admin Panel',
+      description: 'A mobile application for accessing Islamic content and resources.',
+      techStack: ['Angular', 'Springboot', 'Mysql', 'Kubernetes'],
+      githubLink: 'https://github.com/Majdizamiti/E-commerce',
+      liveLink: '#',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg'
+}
   ];
 
   getThemeClass(proj: PortfolioProject): string {

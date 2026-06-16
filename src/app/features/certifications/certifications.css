@@ -1,10 +1,13 @@
 .certifications-section {
   padding: var(--section-padding);
-  background: var(--bg-primary);
+  background: 
+    linear-gradient(180deg, rgba(10, 10, 15, 0.98), rgba(15, 15, 24, 0.99)),
+    radial-gradient(circle at 50% 50%, rgba(230, 57, 70, 0.08), transparent 60%);
   color: var(--text-primary);
   text-align: center;
   position: relative;
   overflow: hidden;
+  border-top: 2px solid rgba(230, 57, 70, 0.2);
 }
 
 .certifications-section::before {
@@ -14,7 +17,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border-accent), transparent);
+  background: linear-gradient(90deg, transparent, rgba(230, 57, 70, 0.4), transparent);
 }
 
 .certifications-section::after {
@@ -25,8 +28,8 @@
   transform: translate(-50%, -50%);
   width: 100vw;
   height: 100vh;
-  background: radial-gradient(circle, var(--accent-magenta-glow) 0%, transparent 50%);
-  opacity: 0.1;
+  background: radial-gradient(circle, rgba(230, 57, 70, 0.15) 0%, transparent 50%);
+  opacity: 0.15;
   pointer-events: none;
   z-index: 0;
 }
