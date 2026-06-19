@@ -1,4 +1,4 @@
-# Stage 1: build Angular app
+# Build stage
 FROM node:22-alpine AS build
 
 WORKDIR /app
@@ -9,10 +9,10 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-
-# Stage 2: nginx server
+# Production stage
 FROM nginx:alpine
 
-COPY --from=build /app/dist/majdi /usr/share/nginx/html
+# IMPORTANT: replace <your-angular-app-name>
+COPY --from=build /app/dist/ /usr/share/nginx/html
 
 EXPOSE 80
