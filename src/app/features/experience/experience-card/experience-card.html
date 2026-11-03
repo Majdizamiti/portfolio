@@ -1,1 +1,32 @@
-<p>experience-card works!</p>
+<article class="card">
+  <!-- Card Header with Company Logo -->
+  <div class="card-header">
+    <div class="company-text">
+      <h3 class="role">{{ item().role }}</h3>
+      <p class="company">{{ item().company }}</p>
+    </div>
+    @if (item().logo; as logo) {
+      <div class="company-logo-box">
+        <img [src]="logo" class="company-logo-img" alt="{{ item().company }} logo">
+      </div>
+    }
+  </div>
+
+  <p class="period">
+    <time [attr.datetime]="item().start">{{ startLabel() }}</time>
+    –
+    @if (item().end; as end) {
+      <time [attr.datetime]="end">{{ endLabel() }}</time>
+    } @else {
+      <span>{{ endLabel() }}</span>
+    }
+  </p>
+
+  <p class="description">{{ item().description }}</p>
+
+  <ul class="tags" role="list" aria-label="Technologies used">
+    @for (tech of item().technologies; track tech) {
+      <li class="tag">{{ tech }}</li>
+    }
+  </ul>
+</article>

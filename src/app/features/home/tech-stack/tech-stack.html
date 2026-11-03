@@ -1,1 +1,35 @@
-<p>tech-stack works!</p>
+<section id="skills" class="skills-section" aria-labelledby="skills-title">
+  <!-- Ambient Background Glow -->
+  <div class="skills__bg" aria-hidden="true"></div>
+
+  <div class="skills-container">
+
+    <!-- Section Header -->
+    <div class="skills-header">
+      <p class="skills-eyebrow">SKILLS</p>
+      <h2 id="skills-title" class="skills-title">Technical skills</h2>
+      <p class="skills-subtitle">From infrastructure and automation to backend, front-end and mobile.</p>
+    </div>
+
+    <!-- Category Grid -->
+    <div class="skills-grid">
+      <div class="skill-card" *ngFor="let cat of categories">
+
+        <!-- Category Icon Box -->
+        <div class="icon-box">
+          <span class="icon">{{ cat.icon }}</span>
+        </div>
+
+        <!-- Category Title -->
+        <h3 class="card-title">{{ cat.title }}</h3>
+
+        <!-- Skill Pills List -->
+        <div class="pills-group">
+          <span class="skill-pill" *ngFor="let skill of cat.skills">{{ skill }}</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>

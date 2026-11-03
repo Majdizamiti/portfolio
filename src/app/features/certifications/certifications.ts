@@ -1,85 +1,97 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CertificationCardComponent } from './certification-card/certification-card';
 
-interface Certification {
+export interface Certification {
+  code: string;
   title: string;
   fullTitle: string;
   issuer: string;
   date: string;
-  credentialId: string;
-  icon: string;
+  certLink?: string;
+  logo: string;
+  upcoming?: boolean;
 }
 
 @Component({
   selector: 'app-certifications',
   standalone: true,
-  imports: [CommonModule, CertificationCardComponent],
-  template: `
-    <section id="certifications" class="section">
-      <h2>Certifications</h2>
-
-      <div class="grid">
-        <app-certification-card
-          *ngFor="let cert of certifications"
-          [title]="cert.title"
-          [fullTitle]="cert.fullTitle"
-          [issuer]="cert.issuer"
-          [date]="cert.date"
-          [credentialId]="cert.credentialId"
-          [icon]="cert.icon">
-        </app-certification-card>
-      </div>
-    </section>
-  `,
-  styles: [`
-    .section {
-      padding: 6rem 3rem;
-      background: #0f172a;
-      color: white;
-      text-align: center;
-    }
-
-    .grid {
-      margin-top: 40px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-  `]
+  imports: [CommonModule],
+  templateUrl: './certifications.html',
+  styleUrls: ['./certifications.css'],
 })
 export class Certifications {
-
-  certifications: Certification[] = [
+  readonly certifications: Certification[] = [
     {
-      title: 'RHCSA',
-      fullTitle: 'Red Hat Certified System Administrator',
-      issuer: 'Red Hat',
-      date: '2024',
-      credentialId: 'XXXX-XXXX',
-      icon: 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@latest/icons/redhat.svg'
+      code: 'NVIDIA',
+      title: 'NVIDIA GenAI',
+      fullTitle: 'NVIDIA Certified Associate — LLMs and Generative AI',
+      issuer: 'NVIDIA',
+      date: 'Coming 2026',
+      logo: 'https://cdn.simpleicons.org/nvidia/76B900',
+      upcoming: true,
     },
     {
+      code: 'CKAD',
+      title: 'CKAD Kubernetes',
+      fullTitle: 'Certified Kubernetes Application Developer',
+      issuer: 'CNCF',
+      date: 'Coming 2026',
+      logo: 'https://cdn.simpleicons.org/kubernetes/326CE5',
+      upcoming: true,
+    },
+    {
+      code: 'TF-004',
+      title: 'Terraform Assoc.',
+      fullTitle: 'HashiCorp Certified: Terraform Associate (004)',
+      issuer: 'HashiCorp',
+      date: 'Coming 2026',
+      logo: 'https://cdn.simpleicons.org/terraform/7B42BC',
+      upcoming: true,
+    },
+    {
+      code: 'RHCD',
+      title: 'RHCD Cloud',
+      fullTitle: 'Red Hat Certified Developer in Cloud-native Applications',
+      issuer: 'Red Hat',
+      date: 'Sep 2026',
+      certLink: 'https://www.redhat.com/en/services/certification',
+      logo: 'https://cdn.simpleicons.org/redhat/EE0000',
+    },
+    {
+      code: 'RHCA',
+      title: 'RHCA Ansible',
+      fullTitle: 'Red Hat Certified Advanced System Administrator in Ansible',
+      issuer: 'Red Hat',
+      date: 'Feb 2026',
+      certLink: 'https://www.redhat.com/en/services/certification',
+      logo: 'https://cdn.simpleicons.org/redhat/EE0000',
+    },
+    {
+      code: 'RHCE',
       title: 'RHCE',
       fullTitle: 'Red Hat Certified Engineer',
       issuer: 'Red Hat',
       date: '2025',
-      credentialId: 'YYYY-YYYY',
-      icon: 'https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@latest/icons/redhat.svg'
+      certLink: 'https://www.redhat.com/en/services/certification',
+      logo: 'https://cdn.simpleicons.org/redhat/EE0000',
     },
     {
+      code: 'RHCSA',
+      title: 'RHCSA',
+      fullTitle: 'Red Hat Certified System Administrator',
+      issuer: 'Red Hat',
+      date: '2024',
+      certLink: 'https://www.redhat.com/en/services/certification',
+      logo: 'https://cdn.simpleicons.org/redhat/EE0000',
+    },
+    {
+      code: 'PCAP',
       title: 'PCAP',
       fullTitle: 'Python Certified Associate Programmer',
       issuer: 'Python Institute',
       date: '2024',
-      credentialId: 'ZZZZ-ZZZZ',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg'
-    }
+      certLink: 'https://pythoninstitute.org/pcap',
+      logo: 'https://cdn.simpleicons.org/python/3776AB',
+    },
   ];
-
 }

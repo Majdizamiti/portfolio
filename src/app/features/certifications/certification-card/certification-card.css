@@ -6,51 +6,42 @@
 /* Theme Variances */
 .theme-redhat {
   --cert-primary: #ee0000;
-  --cert-glow: rgba(238, 0, 0, 0.15);
-  --cert-hover-glow: rgba(238, 0, 0, 0.3);
+  --cert-glow: rgba(238, 0, 0, 0.18);
+  --cert-hover-glow: rgba(238, 0, 0, 0.35);
 }
 
 .theme-python {
   --cert-primary: #3776ab;
-  --cert-glow: rgba(55, 118, 171, 0.15);
-  --cert-hover-glow: rgba(55, 118, 171, 0.3);
+  --cert-glow: rgba(55, 118, 171, 0.18);
+  --cert-hover-glow: rgba(55, 118, 171, 0.35);
 }
 
 .theme-default {
-  --cert-primary: #00f0ff;
-  --cert-glow: rgba(0, 240, 255, 0.15);
-  --cert-hover-glow: rgba(0, 240, 255, 0.3);
+  --cert-primary: #7cc4ff;
+  --cert-glow: rgba(124, 196, 255, 0.18);
+  --cert-hover-glow: rgba(124, 196, 255, 0.35);
 }
 
-/* Base Card */
+/* Base Card (Unified Hero Surface) */
 .cert-card {
   position: relative;
-  background: var(--bg-card);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 2rem;
+  background: var(--bg-surface);
+  border-radius: 1.25rem;
+  border: 1px solid var(--border-subtle);
+  padding: 2.2rem;
   min-height: 250px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-              box-shadow 0.4s ease, 
-              border-color 0.4s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   cursor: pointer;
   z-index: 1;
-  animation: cardSlideUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.cert-card:nth-child(1) { animation-delay: 0s; }
-.cert-card:nth-child(2) { animation-delay: 0.15s; }
-.cert-card:nth-child(3) { animation-delay: 0.3s; }
-.cert-card:nth-child(4) { animation-delay: 0.45s; }
-.cert-card:nth-child(5) { animation-delay: 0.6s; }
-
 .cert-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   border-color: var(--cert-primary);
-  box-shadow: 0 15px 35px var(--cert-hover-glow), 0 5px 15px rgba(0,0,0,0.5);
+  box-shadow: 0 15px 35px var(--cert-hover-glow), 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
 /* Large Watermark Background */
@@ -87,7 +78,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.8rem;
 }
 
 .issuer {
@@ -100,65 +91,66 @@
 
 .date {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(124, 196, 255, 0.06);
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
+  border: 1px solid var(--border-subtle);
 }
 
 /* Main Body: Icon + Titles */
 .main-body {
   display: flex;
   align-items: flex-start;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  gap: 1.25rem;
+  margin-bottom: 1.8rem;
   flex: 1;
 }
 
 .icon-wrapper {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.02);
-  width: 60px;
-  height: 60px;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background: rgba(255, 255, 255, 0.03);
+  width: 56px;
+  height: 56px;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cert-card:hover .icon-wrapper {
   transform: scale(1.05);
-  box-shadow: 0 10px 20px var(--cert-glow);
-  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 20px var(--cert-glow);
+  border-color: var(--border-hover);
 }
 
 .card-logo {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
 }
 
 .text-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .cert-title {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.4rem;
+  font-weight: 800;
   color: var(--text-primary);
   margin: 0;
-  line-height: 1.1;
+  line-height: 1.2;
   letter-spacing: -0.5px;
 }
 
 .cert-full-title {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--text-secondary);
   line-height: 1.5;
   margin: 0;
@@ -168,7 +160,7 @@
 .divider {
   height: 1px;
   width: 100%;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.05), transparent);
+  background: linear-gradient(to right, var(--border-subtle), transparent);
   margin-bottom: 1.5rem;
 }
 
@@ -194,22 +186,23 @@
 
 .credential-val {
   font-family: var(--font-mono);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--text-primary);
 }
 
 .verify-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  color: var(--text-muted);
-  font-size: 0.9rem;
+  gap: 0.4rem;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
   font-weight: 600;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .verify-link svg {
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .cert-card:hover .verify-link {
@@ -217,6 +210,6 @@
 }
 
 .cert-card:hover .verify-link svg {
-  transform: translateX(4px);
+  transform: translateX(3px);
   color: var(--cert-primary);
 }

@@ -20,6 +20,14 @@ interface PortfolioProject {
 export class Project {
   projects: PortfolioProject[] = [
     {
+      title: 'Smart Recruit',
+      description: 'A microservices-based recruitment management platform designed to automate candidate tracking, job postings, and hiring workflows using scalable distributed services and real-time monitoring.',
+      techStack: ['React', 'SpringBoot', 'MariaDB', 'PostgreSQL', 'Kubernetes', 'Docker', 'Prometheus'],
+      githubLink: 'https://github.com/Majdizamiti/Smart-Recruit',
+      liveLink: '#',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg'
+    },
+    {
       title: 'React Frontend Application',
       description: 'A dynamic, high-performance single-page application built with React, focusing on delivering a seamless and interactive user experience.',
       techStack: ['React', 'TypeScript', 'Tailwind', 'Redux'],
@@ -59,17 +67,20 @@ export class Project {
     },
     {
       title: 'Ecommerce Dashboard Admin Panel',
-      description: 'A mobile application for accessing Islamic content and resources.',
+      description: 'A comprehensive e-commerce administration panel for managing products, orders, users, and store analytics.',
       techStack: ['Angular', 'Springboot', 'Mysql', 'Kubernetes'],
       githubLink: 'https://github.com/Majdizamiti/E-commerce',
       liveLink: '#',
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg'
-}
+    }
   ];
 
   getThemeClass(proj: PortfolioProject): string {
     const titleLower = proj.title.toLowerCase();
 
+    if (titleLower.includes('recruit')) {
+      return 'theme-smartrecruit';
+    }
     if (titleLower.includes('react')) {
       return 'theme-react';
     }

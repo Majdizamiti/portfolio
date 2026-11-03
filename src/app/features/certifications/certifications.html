@@ -1,31 +1,62 @@
-<section id="certifications" class="certifications-section">
+<section id="certifications" class="certifications-section" aria-labelledby="certifications-title">
+  <!-- Ambient Background Glow -->
+  <div class="certifications__bg" aria-hidden="true"></div>
 
-  <h2 @fadeInUp>Certifications</h2>
+  <div class="certifications-container">
 
-  <div class="cards">
+    <!-- Section Header -->
+    <div class="certifications-header">
+      <p class="certifications-eyebrow">CERTIFICATIONS</p>
+      <h2 id="certifications-title" class="certifications-title">Professional certifications</h2>
+      <p class="certifications-subtitle">Earned professional credentials and upcoming targeted certifications (2026).</p>
+    </div>
 
-    <div class="card"
-         *ngFor="let cert of certifications"
-         @fadeInUp>
+    <!-- Cards Grid -->
+    <div class="cards-grid">
+      <div class="cert-card" *ngFor="let cert of certifications" [class.upcoming]="cert.upcoming">
 
-      <div class="card-inner">
+        <!-- Faint Background Watermark Logo -->
+        <img [src]="cert.logo" class="watermark-logo" alt="">
 
-        <div class="logo">
-          <img [src]="cert.logo" alt="Certification Logo">
+        <!-- Top Header Row: Badge Circle + Provider Logo -->
+        <div class="card-top">
+          <div class="badge-circle" [class.badge-circle--upcoming]="cert.upcoming">
+            <span class="badge-code">{{ cert.code }}</span>
+          </div>
+          <img [src]="cert.logo" class="provider-logo" alt="{{ cert.issuer }} logo">
         </div>
 
-        <h3>{{ cert.short }}</h3>
+        <!-- Title & Full Description -->
+        <h3 class="cert-title">{{ cert.title }}</h3>
+        <p class="cert-full-title">{{ cert.fullTitle }}</p>
 
-        <p class="title">{{ cert.title }}</p>
+        <!-- Footer Row: Issuer & Date -->
+        <div class="card-footer">
+          <span class="issuer">{{ cert.issuer }}</span>
+          <span class="date" [class.date--upcoming]="cert.upcoming">{{ cert.date }}</span>
+        </div>
 
-        <p class="issuer">{{ cert.issuer }}</p>
+        <!-- Link to Certification (Earned) -->
+        <div class="card-link-row" *ngIf="!cert.upcoming">
+          <a [href]="cert.certLink" target="_blank" rel="noopener noreferrer" class="cert-link">
+            Link to certification
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+        </div>
 
-        <span class="date">{{ cert.date }}</span>
+        <!-- Planned Badge (Upcoming) -->
+        <div class="card-link-row" *ngIf="cert.upcoming">
+          <span class="upcoming-badge">
+            <span class="pulse-dot"></span> In Progress / Planned
+          </span>
+        </div>
 
       </div>
-
     </div>
 
   </div>
-
 </section>

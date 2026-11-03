@@ -1,77 +1,40 @@
-<section id="about" class="about-section">
+<section id="about" class="about-section" aria-labelledby="about-title">
+  <!-- Ambient Background Glow -->
+  <div class="about__bg" aria-hidden="true"></div>
+
   <div class="about-container">
 
-    <div class="about-header">
-      <h2 class="section-title">About Me</h2>
-      <p class="section-subtitle">Get to know the engineer behind the infrastructure</p>
+    <!-- LEFT COPY -->
+    <div class="about-copy">
+      <p class="about-eyebrow">ABOUT</p>
+
+      <h2 id="about-title" class="about-title">
+        Building <span class="highlight">reliable</span> systems
+      </h2>
+
+      <p class="about-intro">
+        I’m a passionate DevOps Engineer specialized in Linux system administration, Ansible automation, Docker, Kubernetes and modern CI/CD pipelines. I focus on secure, scalable infrastructure, automated delivery platforms, and high-performance web and mobile applications built with Spring Boot, Angular, React and Flutter.
+      </p>
     </div>
 
-    <div class="about-split">
-
-      <!-- Left: Profile Image -->
-      <div class="about-left">
-        <div class="profile-frame">
-          <img src="majdi.png" alt="Majdi Zamiti">
-          <div class="profile-ring"></div>
-        </div>
-        <div class="profile-badges">
-          <span class="badge">RHCE</span>
-          <span class="badge">RHCSA</span>
-          <span class="badge">Linux</span>
-        </div>
+    <!-- RIGHT DETAILS CARD -->
+    <div class="about-card">
+      <div class="info-row">
+        <span class="info-label">Name</span>
+        <span class="info-value">Majdi Zamiti</span>
       </div>
-
-      <!-- Right: Bio + Progress Bars -->
-      <div class="about-right">
-        <p class="bio-text">
-          Passionate <strong>DevOps Engineer</strong> specialized in Linux system administration,
-          Ansible automation, and infrastructure management. I design and maintain secure, scalable
-          environments with a focus on reliability and modern best practices.
-        </p>
-
-        <div class="progress-bars">
-          <div class="progress-item">
-            <div class="progress-head">
-              <span class="progress-label">🐧 Linux</span>
-              <span class="progress-pct">95%</span>
-            </div>
-            <div class="progress-track">
-              <div class="progress-fill" style="width: 95%"></div>
-            </div>
-          </div>
-
-          <div class="progress-item">
-            <div class="progress-head">
-              <span class="progress-label">⚙️ Ansible</span>
-              <span class="progress-pct">90%</span>
-            </div>
-            <div class="progress-track">
-              <div class="progress-fill" style="width: 90%"></div>
-            </div>
-          </div>
-
-          <div class="progress-item">
-            <div class="progress-head">
-              <span class="progress-label">🐳 Docker</span>
-              <span class="progress-pct">85%</span>
-            </div>
-            <div class="progress-track">
-              <div class="progress-fill" style="width: 85%"></div>
-            </div>
-          </div>
-
-          <div class="progress-item">
-            <div class="progress-head">
-              <span class="progress-label">☸️ Kubernetes</span>
-              <span class="progress-pct">80%</span>
-            </div>
-            <div class="progress-track">
-              <div class="progress-fill" style="width: 80%"></div>
-            </div>
-          </div>
-        </div>
+      <div class="info-row">
+        <span class="info-label">Focus</span>
+        <span class="info-value">DevOps · Full-Stack</span>
       </div>
-
+      <div class="info-row">
+        <span class="info-label">Certified</span>
+        <span class="info-value">RHCE · RHCA · RHCSA</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Specialty</span>
+        <span class="info-value">Linux &amp; Ansible</span>
+      </div>
     </div>
 
   </div>
