@@ -1,20 +1,27 @@
+/* ===== BESPOKE HUMAN FRONTEND DESIGN SYSTEM ===== */
 :root {
-  --bg-primary: #0b1020;
-  --bg-surface: #141b34;
-  --bg-card: rgba(20, 27, 52, 0.75);
-  --text-primary: #f2f5ff;
-  --text-secondary: #b4bdd9;
-  --text-muted: #8e9bb8;
-  --accent: #7cc4ff;
-  --accent-contrast: #06101f;
-  --accent-purple: #a078ff;
-  --border-subtle: rgba(124, 196, 255, 0.12);
-  --border-hover: rgba(124, 196, 255, 0.35);
-  --shadow-glow: 0 10px 30px rgba(124, 196, 255, 0.12);
-  --header-height: 4.5rem;
-  --section-padding: 5rem 1.5rem;
-  --container-max: 72rem;
+  /* Color Palette — Deep Obsidian Black & Electric Volt Accent */
+  --bg-primary: #050508;
+  --bg-surface: #0d0e17;
+  --bg-card: rgba(16, 18, 30, 0.85);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #64748b;
+
+  --accent-volt: #ccff00;      /* Signature Electric Volt Green */
+  --accent-cyan: #38bdf8;      /* Sky Blue */
+  --accent-purple: #a855f7;    /* Electric Purple */
+  --accent-pink: #ec4899;      /* Vibrant Magenta */
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(204, 255, 0, 0.3);
+
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --container-max: 76rem;
+  --section-padding: 6rem 2rem;
 }
 
 body.light-theme {
@@ -24,12 +31,11 @@ body.light-theme {
   --text-primary: #0f172a;
   --text-secondary: #334155;
   --text-muted: #64748b;
-  --accent: #0284c7;
-  --accent-contrast: #ffffff;
+  --accent-volt: #0284c7;
+  --accent-cyan: #0284c7;
   --accent-purple: #7e22ce;
   --border-subtle: rgba(0, 0, 0, 0.08);
-  --border-hover: rgba(2, 132, 199, 0.3);
-  --shadow-glow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  --border-glow: rgba(2, 132, 199, 0.3);
 }
 
 body.light-theme .hero,
@@ -48,8 +54,7 @@ body.light-theme .skill-card,
 body.light-theme .cert-card,
 body.light-theme .proj-card,
 body.light-theme .about-card,
-body.light-theme .contact-card,
-body.light-theme .hero__terminal {
+body.light-theme .contact-card {
   background: #f8fafc;
   border-color: rgba(0, 0, 0, 0.08);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
@@ -80,10 +85,13 @@ body {
   padding: 0;
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: var(--font-sans);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.3s ease, color 0.3s ease;
+  background-image:
+    radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.05), transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(168, 85, 247, 0.05), transparent 40%);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -94,25 +102,25 @@ body {
 
 /* Global Section Header Styles */
 .section-title {
-  font-size: clamp(2rem, 1.5rem + 2.5vw, 3.2rem);
+  font-size: clamp(2.2rem, 1.8rem + 2.5vw, 3.6rem);
   font-weight: 800;
   text-align: center;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.6rem 0;
   color: var(--text-primary);
-  letter-spacing: -0.5px;
+  letter-spacing: -1px;
 }
 
 .section-subtitle {
   text-align: center;
-  color: var(--accent);
-  font-size: 0.95rem;
-  font-weight: 600;
+  color: var(--accent-cyan);
+  font-size: 1rem;
+  font-weight: 500;
   letter-spacing: 0.5px;
-  max-width: 40rem;
+  max-width: 42rem;
   margin: 0 auto 3.5rem;
 }
 
-/* ===== ADVANCED ANIMATIONS & EFFECTS ===== */
+/* ===== ADVANCED BESPOKE ANIMATIONS ===== */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -124,22 +132,14 @@ body {
   }
 }
 
-@keyframes floatGlow {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(15px, -20px) scale(1.05);
-  }
+@keyframes shimmerSweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
-@keyframes shimmerLight {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.25); opacity: 0.7; }
 }
 
 .skill-card, .cert-card, .proj-card, .about-card, .contact-card {
@@ -156,7 +156,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.04), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
   transform: translateX(-100%);
   pointer-events: none;
   transition: transform 0.6s ease;

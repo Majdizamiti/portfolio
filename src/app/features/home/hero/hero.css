@@ -1,10 +1,10 @@
 :host {
   display: block;
-  color: #f2f5ff;
-  background: #090d16;
-  --grad: linear-gradient(120deg, #38bdf8, #a855f7);
-  --line: rgba(255, 255, 255, 0.12);
-  --card: #141b34;
+  color: #f8fafc;
+  background: #050508;
+  --grad: linear-gradient(135deg, #38bdf8, #a855f7);
+  --line: rgba(255, 255, 255, 0.1);
+  --card: #0d0e17;
 }
 
 .hero {
@@ -26,15 +26,15 @@
   inset: -10%;
   z-index: -1;
   background:
-    radial-gradient(circle at 10% 25%, rgba(56, 189, 248, 0.15), transparent 50%),
-    radial-gradient(circle at 85% 75%, rgba(168, 85, 247, 0.18), transparent 50%);
+    radial-gradient(circle at 10% 25%, rgba(56, 189, 248, 0.12), transparent 50%),
+    radial-gradient(circle at 85% 75%, rgba(168, 85, 247, 0.15), transparent 50%);
   pointer-events: none;
 }
 
 .hero__inner {
   display: grid;
   gap: 3rem;
-  max-width: 75rem;
+  max-width: 76rem;
   margin: 0 auto;
   width: 100%;
   align-items: center;
@@ -47,25 +47,25 @@
   align-items: flex-start;
 }
 
-/* Status Badge */
+/* Status Badge with Volt Green Accent */
 .hero__status-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
   background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 999px;
-  padding: 0.35rem 1rem;
+  padding: 0.35rem 1.1rem;
   margin-bottom: 1.2rem;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
 }
 
 .status-dot {
   width: 8px;
   height: 8px;
-  background: #22c55e;
+  background: #ccff00;
   border-radius: 50%;
-  box-shadow: 0 0 10px #22c55e;
+  box-shadow: 0 0 10px #ccff00;
   animation: pulse-dot 2s infinite ease-in-out;
 }
 
@@ -76,8 +76,9 @@
 
 .status-text {
   font-size: 0.85rem;
-  font-weight: 500;
-  color: #e2e8f0;
+  font-weight: 600;
+  color: #f8fafc;
+  letter-spacing: 0.2px;
 }
 
 /* Title */
@@ -151,7 +152,7 @@
   padding: 0.35rem 0.95rem;
   font-size: 0.8rem;
   font-weight: 600;
-  color: #f2f5ff;
+  color: #f8fafc;
   backdrop-filter: blur(8px);
 }
 
@@ -186,7 +187,7 @@
 }
 
 .btn--gradient {
-  background: linear-gradient(135deg, #60a5fa, #a855f7);
+  background: linear-gradient(135deg, #38bdf8, #a855f7);
   color: #ffffff;
   padding: 0.75rem 2rem;
   border-radius: 999px;
@@ -232,7 +233,7 @@
 .stat-number {
   font-size: 2rem;
   font-weight: 800;
-  color: #60a5fa;
+  color: #38bdf8;
   line-height: 1;
 }
 
@@ -242,7 +243,7 @@
   font-weight: 500;
 }
 
-/* RIGHT VISUAL — PORTRAIT WITH FLOATING CHIPS */
+/* RIGHT VISUAL — PORTRAIT FRAME */
 .hero__visual {
   display: flex;
   justify-content: center;
@@ -255,7 +256,6 @@
 }
 
 .portrait::before {
-  /* soft glow behind the photo */
   content: "";
   position: absolute;
   inset: 8% 8% -6%;
@@ -269,7 +269,7 @@
 .portrait__frame {
   padding: 4px;
   border-radius: 2rem;
-  background: var(--grad); /* gradient border */
+  background: var(--grad);
   transform: rotate(2deg);
   transition: transform .5s ease;
 }
@@ -288,38 +288,6 @@
 @media (hover: hover) {
   .portrait__frame:hover {
     transform: rotate(0deg);
-  }
-}
-
-.portrait__chip {
-  position: absolute;
-  padding: .55rem 1rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(11, 16, 32, .85);
-  backdrop-filter: blur(10px);
-  font-size: .85rem;
-  font-weight: 600;
-  white-space: nowrap;
-  color: #f2f5ff;
-  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, .7);
-}
-
-.portrait__chip--top {
-  top: 8%;
-  left: -6%;
-  animation: bob 6s ease-in-out infinite;
-}
-
-.portrait__chip--bottom {
-  bottom: 8%;
-  right: -6%;
-  animation: bob 7s ease-in-out infinite reverse;
-}
-
-@keyframes bob {
-  50% {
-    transform: translateY(-.6rem);
   }
 }
 
@@ -364,20 +332,9 @@
     order: -1;
     width: min(70%, 15rem);
   }
-
-  .portrait__chip--top {
-    left: -4%;
-  }
-
-  .portrait__chip--bottom {
-    right: -4%;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .portrait__chip {
-    animation: none;
-  }
   .portrait__frame {
     transform: none;
     transition: none;
