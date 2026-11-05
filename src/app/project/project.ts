@@ -24,7 +24,7 @@ export class Project {
       title: 'Smart Recruit',
       description: 'A microservices-based recruitment management platform designed to automate candidate tracking, job postings, and hiring workflows using scalable distributed services and real-time monitoring.',
       techStack: ['React', 'SpringBoot', 'MariaDB', 'PostgreSQL', 'Kubernetes', 'Docker', 'Prometheus'],
-      githubLink: 'https://github.com/Majdizamiti/Smart-Recruit',
+      githubLink: 'https://github.com/fadihajji1/SmartRecruit---server',
       liveLink: '#',
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg',
       status: 'In Progress'
@@ -33,7 +33,7 @@ export class Project {
       title: 'React Frontend Application',
       description: 'A dynamic, high-performance single-page application built with React, focusing on delivering a seamless and interactive user experience.',
       techStack: ['React', 'TypeScript', 'Tailwind', 'Redux'],
-      githubLink: '#',
+      githubLink: 'https://github.com/Majdizamiti/Delivery_optimization_System',
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
       status: 'Completed'
     },
@@ -41,7 +41,7 @@ export class Project {
       title: 'Workflow Automation with n8n',
       description: 'Complex business process automation and data pipeline synchronization using n8n self-hosted workflows and external API integrations.',
       techStack: ['n8n', 'Webhooks', 'REST APIs', 'PostgreSQL'],
-      githubLink: '#',
+      githubLink: 'https://github.com/Majdizamiti/N8N-JournalWriteBot',
       icon: 'https://cdn.simpleicons.org/n8n/FF6666',
       status: 'Completed'
     },
@@ -49,6 +49,7 @@ export class Project {
       title: 'Node.js Backend Service',
       description: 'A robust and scalable RESTful API backend handling authentication, data processing, and serving the frontend application seamlessly.',
       techStack: ['Node.js', 'Express', 'MongoDB', 'JWT'],
+      githubLink: 'https://github.com/fadihajji1/RecouvraApi',
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',
       status: 'Completed'
     },
