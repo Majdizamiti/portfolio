@@ -89,7 +89,7 @@ export class ChatbotComponent {
       const current = [...this.messages()];
       current[assistantIndex] = {
         role: 'assistant',
-        content: `I'm currently unable to process your request. Feel free to reach out to Majdi directly at contact@majdizamiti.com!`
+        content: `I'm currently unable to process your request. Feel free to reach out to Majdi directly at majdizamiti@gmail.com!`
       };
       this.messages.set(current);
     } finally {

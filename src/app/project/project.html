@@ -22,8 +22,7 @@
           <!-- Top Bar -->
           <div class="top-bar">
             <span class="issuer">Project</span>
-            <span class="date" *ngIf="proj.liveLink && proj.liveLink !== '#'">Deployed</span>
-            <span class="date" *ngIf="!proj.liveLink || proj.liveLink === '#'">In Progress</span>
+            <span class="date" [class.date--completed]="proj.status === 'Completed'">{{ proj.status }}</span>
           </div>
 
           <!-- Main Body: Icon + Titles -->

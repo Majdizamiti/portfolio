@@ -169,11 +169,17 @@
 .date {
   font-family: var(--font-mono, ui-monospace, monospace);
   font-size: 0.75rem;
-  color: #94a3b8;
-  background: rgba(255, 255, 255, 0.04);
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
   padding: 0.2rem 0.65rem;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.date--completed {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.2);
 }
 
 /* Main Body: Icon + Titles */
