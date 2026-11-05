@@ -1,7 +1,0 @@
-fastapi
-uvicorn[standard]
-python-dotenv
-slowapi
-openai
-pydantic
-tenacity
