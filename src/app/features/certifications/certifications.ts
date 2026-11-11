@@ -22,15 +22,6 @@ export interface Certification {
 export class Certifications {
   readonly certifications: Certification[] = [
     {
-      code: 'NVIDIA',
-      title: 'NVIDIA GenAI',
-      fullTitle: 'NVIDIA Certified Associate — LLMs and Generative AI',
-      issuer: 'NVIDIA',
-      date: 'Coming 2026',
-      logo: 'https://cdn.simpleicons.org/nvidia/76B900',
-      upcoming: true,
-    },
-    {
       code: 'CKAD',
       title: 'CKAD Kubernetes',
       fullTitle: 'Certified Kubernetes Application Developer',
@@ -47,6 +38,15 @@ export class Certifications {
       date: 'Coming 2026',
       logo: 'https://cdn.simpleicons.org/terraform/7B42BC',
       upcoming: true,
+    },
+    {
+      code: 'NVIDIA',
+      title: 'NVIDIA GenAI',
+      fullTitle: 'NVIDIA Certified Associate — LLMs and Generative AI',
+      issuer: 'NVIDIA',
+      date: 'NOV 2026',
+      certLink: 'http://credential.nvidia.com/b5b7561a-b528-461a-82c0-6854c449c590#acc.rLVN9MSW' ,
+      logo: 'https://cdn.simpleicons.org/nvidia/76B900',
     },
     {
       code: 'RHCD',
